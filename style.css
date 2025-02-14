@@ -4,26 +4,44 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
+
 .weather-card {
     background: white;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 320px;
     text-align: center;
 }
+
 .weather-card h1 {
     font-size: 3rem;
     margin: 10px 0;
 }
+
 .weather-card .details {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
     font-size: 1rem;
 }
+
 .weather-icon {
     font-size: 50px;
     color: #1e88e5;
+}
+
+/* Ajuste para o input e botão */
+.input-group {
+    display: flex;
+}
+
+.input-group input {
+    border-radius: 10px 0 0 10px;
+}
+
+.input-group button {
+    border-radius: 0 10px 10px 0;
 }

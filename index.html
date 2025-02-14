@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Previsão do tempo</title>
-    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,22 +13,30 @@
 <body>
 
     <div class="weather-card">
-        <div class="d-flex justify-content-between">
-            <span id="cidade">Americana</span>
-            <span>16:23</span>
+        <h2 class="mb-3">Previsão do Tempo</h2>
+
+        <div class="input-group mb-3">
+            <input type="text" id="input-cidade" class="form-control" placeholder="Digite a cidade">
+            <button class="btn btn-primary" onclick="fnBuscarPrevisao()">Buscar</button>
         </div>
-        <h1 id="temperatura">13°C</h1>
-        <p id="descricao">Chuvoso</p>
-        <i class="bi bi-cloud-lightning-rain weather-icon"></i>
+
+        <div class="d-flex justify-content-between">
+            <span id="cidade">Cidade</span>
+            <span id="hora-atual">--:--</span>
+        </div>
+
+        <h1 id="temperatura">--°C</h1>
+        <p id="descricao">--</p>
+        <i id="weather-icon" class="bi bi-cloud weather-icon"></i>
+
         <div class="details">
-            <div><i class="bi bi-wind" id="bi-wind"></i> 17 km/h</div>
-            <div><i class="bi bi-droplet"></i> 84%</div>
-            <div><i class="bi bi-brightness-alt-high"></i> 0.2h</div>
+            <div><i class="bi bi-wind"></i> <span id="vento">-- km/h</span></div>
+            <div><i class="bi bi-droplet"></i> <span id="umidade">--%</span></div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
-</body>
 
+</body>
 </html>
