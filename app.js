@@ -45,4 +45,22 @@ function fnExibirInformacoes(cidade, temperatura, descricao, vento) {
     }
 
     document.getElementById("weather-icon").className = `bi ${icon} weather-icon`;
+
+    fnUmidade(descricao)
+}
+
+function fnUmidade(descricao){
+    let umidadeValor = "";
+
+    if(descricao.toLowerCase().includes("rain")){
+        umidadeValor = "82";
+    }else if(descricao.toLowerCase().includes("sun")){
+        umidadeValor = "40";
+    }else if(descricao.toLowerCase().includes("storm")){
+        umidadeValor = "95";
+    }else{
+        umidadeValor = "50";
+    }
+
+    document.getElementById("umidade").innerText = umidadeValor + "%";
 }
