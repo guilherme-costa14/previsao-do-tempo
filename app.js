@@ -1,3 +1,4 @@
+//botão armazena as informações que a pessoa digita
 function fnBuscarPrevisao() {
     let cidade = document.getElementById("input-cidade").value.trim();
     if (cidade) {
@@ -7,6 +8,7 @@ function fnBuscarPrevisao() {
     }
 }
 
+//faz a consulta dentro da api
 function fnPrevisaoDoTempo(cidade) {
     const url = `https://goweather.herokuapp.com/weather/${cidade}`;
     
@@ -25,6 +27,7 @@ function fnPrevisaoDoTempo(cidade) {
         });
 }
 
+//retornar os dados para os campos depois da consulta
 function fnExibirInformacoes(cidade, temperatura, descricao, vento) {
     document.getElementById("cidade").innerText = cidade;
     document.getElementById("temperatura").innerText = temperatura;
@@ -49,6 +52,7 @@ function fnExibirInformacoes(cidade, temperatura, descricao, vento) {
     fnUmidade(descricao)
 }
 
+//gera uma umidade genérica com base na descrição
 function fnUmidade(descricao){
     let umidadeValor = "";
 
@@ -64,3 +68,6 @@ function fnUmidade(descricao){
 
     document.getElementById("umidade").innerText = umidadeValor + "%";
 }
+
+//carrega uma informaçõas prévia de uma cidade
+fnPrevisaoDoTempo("Hortolândia");
