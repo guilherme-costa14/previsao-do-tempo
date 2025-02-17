@@ -1,3 +1,6 @@
+//carrega uma informaçõas prévia de uma cidade
+fnPrevisaoDoTempo("Hortolândia");
+
 //botão armazena as informações que a pessoa digita
 function fnBuscarPrevisao() {
     let cidade = document.getElementById("input-cidade").value.trim();
@@ -34,6 +37,7 @@ function fnExibirInformacoes(cidade, temperatura, descricao, vento) {
     document.getElementById("descricao").innerText = descricao;
     document.getElementById("vento").innerText = vento;
     document.getElementById("hora-atual").innerText = new Date().toLocaleTimeString();
+    document.getElementById("input-cidade").value = "";
 
     // Atualiza o ícone com base na descrição do tempo
     let icon = "bi-cloud";
@@ -69,5 +73,3 @@ function fnUmidade(descricao){
     document.getElementById("umidade").innerText = umidadeValor + "%";
 }
 
-//carrega uma informaçõas prévia de uma cidade
-fnPrevisaoDoTempo("Hortolândia");
